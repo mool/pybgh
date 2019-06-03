@@ -17,7 +17,7 @@ MODE = {
     'cool': 1,
     'heat': 2,
     'dry': 3,
-    'fan': 4,
+    'fan_only': 4,
     'auto': 254,
     'no_change': 255
 }
