@@ -7,7 +7,7 @@ print(setuptools.find_packages())
 
 setuptools.setup(
     name='pybgh',
-    version='0.1.1',
+    version='0.1.2',
     author='Pablo Gutierrez del Castillo',
     author_email='pablogutierrezdelc@gmail.com',
     description='A BGH Smart devices API client',

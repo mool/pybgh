@@ -53,7 +53,7 @@ class BghClient():
                 'Scenes': 0,
                 'Macros': 0,
                 'Alarms': 0
-                },
+            },
             'timeOut': 10000
         }
         resp = self._request(endpoint, payload)
@@ -61,6 +61,10 @@ class BghClient():
 
     def _parse_devices(self, data):
         devices = {}
+
+        if data['Endpoints'] is None:
+            return devices
+
         for idx, endpoint in enumerate(data['Endpoints']):
             device = {
                 'device_id': endpoint['EndpointID'],
@@ -79,6 +83,9 @@ class BghClient():
 
     @staticmethod
     def _parse_raw_data(data):
+        if data is None:
+            return {}
+
         temperature = next(item['Value'] for item in data if item['ValueType'] == 13)
         if temperature:
             temperature = float(temperature)
