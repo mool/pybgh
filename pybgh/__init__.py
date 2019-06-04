@@ -5,7 +5,7 @@ _BASE_URL = 'https://bgh-services.solidmation.com'
 _API_URL = "%s/1.0" % _BASE_URL
 
 FAN_MODE = {
-    'slow': 1,
+    'low': 1,
     'mid': 2,
     'high': 3,
     'auto': 254,
